@@ -12,7 +12,7 @@ Django是一种基于Python的Web开发框架。
 
 ![84-1.png](http://liujiangblog.com/static/images/course/84-1.png)
 
-软件设计理念
+**软件设计理念**
 
 - MVC，将业务逻辑（Controller，控制器）、数据（Model，模型）、界面（View，视图）分离，实现解耦；
 - MTV，本质类似，三者分别为模型（Model，ORM）、模板（Template）、视图（View，负责业务逻辑）。Django满足MTV，还有一个URL分发器。Django的MTV模型组织可参考下图所示：
@@ -28,14 +28,6 @@ Django应用
 ### Django Shell
 
 Python交互式命令行程序，自动引入了项目环境，可使用它与项目进行交互使用。
-
-
-
-### 通用视图
-
-使用通用视图：减少重复代码
-
-上面的detail、index和results视图的代码非常相似，有点冗余，这是一个程序猿不能忍受的。他们都具有类似的业务逻辑，实现类似的功能：通过从URL传递过来的参数去数据库查询数据，加载一个模板，利用刚才的数据渲染模板，返回这个模板。由于这个过程是如此的常见，Django很善解人意的帮你想办法偷懒，于是它提供了一种快捷方式，名为“通用视图”。
 
 
 
@@ -110,7 +102,7 @@ URL配置：
 
 4. 项目目录
 
-
+![1581262906411](C:\Users\KZ\AppData\Roaming\Typora\typora-user-images\1581262906411.png)
 
 ## 模型层 Models
 
@@ -167,7 +159,7 @@ Entry.objects 是包含了模型对象的实例，QuerySet 是模型对象。
 <QuerySet [<Choice: china>, <Choice: japan>, <Choice: korea>]>
 ~~~
 
-重写FOO_set`的名字
+**重写`FOO_set`的名字**
 
 ~~~python
 # polls/models.py
@@ -197,6 +189,21 @@ class Choice(models.Model):
 ### 模型的元数据 Meta
 
 模型的元数据，指的是“除了字段外的所有内容”，例如排序方式、数据库表名、人类可读的单数或者复数名等等。所有的这些都是非必须的，甚至元数据本身对模型也是非必须的。
+
+~~~python
+class Choice(models.Model):
+	
+    def __str__(self):
+        return self.choice_text
+
+    # 想在模型中增加元数据，方法很简单，在模型类中添加一个子类，名字是固定的Meta，
+    # 然后在这个Meta类下面增加各种元数据选项或者说设置项
+    class Meta:
+        ordering = ['choice_text']  # 表示按'choice_text'字段进行升序排列
+        # 用于设置模型对象的直观、人类可读的名称。可以用中文，
+        # Django默认会使用小写的模型名作为默认值，同时默认使用复数名称，即verbose_name加上‘s’
+        verbose_name = 'All choice'
+~~~
 
 
 
@@ -259,7 +266,7 @@ TypeError: all() got an unexpected keyword argument 'question_id'
 <QuerySet [<Choice: china>, <Choice: japan>, <Choice: korea>]>
 ~~~
 
-关联查询
+**关联查询**
 
 要跨越某个关联，只需使用关联的模型字段名称，并使用双下划线分隔，直至你想要的字段（可以链式跨越，无限跨度）。
 
@@ -384,6 +391,14 @@ urlpatterns = [
 存在URL命名空间时，反向解析需要在别名前[添加命名空间](https://blog.csdn.net/ifubing/article/details/100601860)，即`"命名空间:别名"`。
 
 
+
+
+
+### 通用视图
+
+使用通用视图：减少重复代码
+
+上面的detail、index和results视图的代码非常相似，有点冗余，这是一个程序猿不能忍受的。他们都具有类似的业务逻辑，实现类似的功能：通过从URL传递过来的参数去数据库查询数据，加载一个模板，利用刚才的数据渲染模板，返回这个模板。由于这个过程是如此的常见，Django很善解人意的帮你想办法偷懒，于是它提供了一种快捷方式，名为“通用视图”。
 
 
 
