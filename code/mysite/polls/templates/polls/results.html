@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>results</title>
+</head>
+<body>
+    <h1>{{ question.question_text}}</h1>
+
+    <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+<!--            pluralize是Django内置的一个过滤器，-->
+<!--            当choice.votes这个变量的值大于1时，也就是复数时，就在字符串vote后面加个s。-->
+<!--            如果值是1，也就是单数形式，就不加s-->
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'polls:detail' question.id %}">Vote Again?</a>
+</body>
+</html>
