@@ -18,7 +18,7 @@ win10。
 
 参考猪哥教程[Pycharm的永久激活](https://shimo.im/docs/DJ3h3tJv98ppTYyH/read)。一句话，激活码不好使，需要使用激活补丁，并修改`vmoptions`文件。
 
-!https://github.com/KaiNiao/Blog/blob/master/1581245552590.png
+![1581245552590](C:\Users\KZ\AppData\Roaming\Typora\typora-user-images\1581245552590.png)
 
 - Anaconda
 
