@@ -18,7 +18,7 @@ win10。
 
 参考猪哥教程[Pycharm的永久激活](https://shimo.im/docs/DJ3h3tJv98ppTYyH/read)。一句话，激活码不好使，需要使用激活补丁，并修改`vmoptions`文件。
 
-![1581245552590](C:\Users\KZ\AppData\Roaming\Typora\typora-user-images\1581245552590.png)
+![1581245552590](<https://github.com/KaiNiao/Blog/raw/master/notes/pictures/1581245552590.png>)
 
 - Anaconda
 
@@ -26,7 +26,7 @@ win10。
 
 [在PyCharm中使用Anaconda创建的环境](https://www.cnblogs.com/anliven/p/9998662.html)，更改Pycharm的解释器选项，注意最终要选择`python.exe`文件。
 
-![1581247235554](C:\Users\KZ\AppData\Roaming\Typora\typora-user-images\1581247235554.png)
+![1581247235554](<https://github.com/KaiNiao/Blog/raw/master/notes/pictures/1581247235554.png>)
 
 ### 数据库
 

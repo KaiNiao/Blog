@@ -102,7 +102,7 @@ URL配置：
 
 4. 项目目录
 
-![1581262906411](C:\Users\KZ\AppData\Roaming\Typora\typora-user-images\1581262906411.png)
+![1581262906411](<http://www.debugger.wiki/article/html/1567131818079150>)
 
 ## 模型层 Models
 
